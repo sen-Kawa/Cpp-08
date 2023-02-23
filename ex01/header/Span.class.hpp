@@ -19,6 +19,7 @@ class Span
 		void	addNumber(const int n);
 		int		shortestSpan(void) const;
 		void	longestSpan(void) const;
+		std::vector<int>	getVector(void) const;
 
 		template<typename T>
 		void	print(T toPrint) const;

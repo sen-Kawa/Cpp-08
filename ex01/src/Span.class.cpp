@@ -2,9 +2,16 @@
 #include <algorithm>
 #include <numeric>
 #include <valarray>
+#include <vector>
+
+std::vector<int> Span::getVector() const
+{
+	return (ints);
+}
 
 void Span::addNumber(const int n)
 {
+	std::cout << YELLOW << "Adding " << n << DEF << std::endl;
 	if (ints.size() >= maxInts)
 		throw Span::VectorFullException();
 	ints.push_back(n);
