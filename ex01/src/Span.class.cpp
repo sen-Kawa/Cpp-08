@@ -8,31 +8,21 @@ void Span::addNumber(const int n)
 	if (ints.size() >= maxInts)
 		throw Span::VectorFullException();
 	ints.push_back(n);
-	std::cout << "All vector elements:" << std::endl;
-	print(ints);
 	return ;
 }
 
-int* Span::shortestSpan() const
+int Span::shortestSpan() const
 {
 	if (ints.size() < 2)
 		throw Span::NoSpanFoundException();
 
 	int result[ints.size()];
-	int *shortest;
 
 	std::adjacent_difference(ints.begin(), ints.end(), result);
-	std::cout << "Adjacent difference:" << std::endl;
-	print(result);
-
-	std::valarray<int> res(result, 5);
+	std::valarray<int> res(result + 1, ints.size() - 1);
 	std::valarray<int> abs_result = abs(res);
-	print(abs_result);
 
-	shortest = std::min_element(static_cast<int*>(abs_result + 1), static_cast<int*>(abs_result + ints.size()));
-	std::cout << *shortest << std::endl;
-	
-	return (shortest);
+	return (abs_result.min());
 }
 
 

@@ -17,7 +17,7 @@ class Span
 	public:
 
 		void	addNumber(const int n);
-		int	*	shortestSpan(void) const;
+		int		shortestSpan(void) const;
 		void	longestSpan(void) const;
 
 		template<typename T>
