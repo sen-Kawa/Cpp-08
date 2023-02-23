@@ -1,7 +1,3 @@
-#include <vector>
-#include <iostream>
-#include <algorithm>
-#include "../header/colours.hpp"
 #include "../header/easyfind.hpp"
 
 int main(void)
