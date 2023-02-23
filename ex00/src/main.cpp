@@ -1,15 +1,20 @@
 #include <vector>
-#include <list>
 #include <iostream>
 #include <algorithm>
 #include "../header/colours.hpp"
 
 template<typename T>
-void easyfind(T ints, int tofind)
+void easyfind(T &ints, const int tofind)
 {
-	int found = std::find(ints.begin(), ints.end(), tofind);	
+	std::cout << YELLOW << "easyfind called with value to find of " << tofind << DEF << std::endl;
+
+	std::cout << YELLOW << "Searching..." << DEF << std::endl;
+	typename T::iterator	found = std::find(ints.begin(), ints.end(), tofind);	
+
 	if (found == ints.end())
 		std::cout << RED << "Couldn't find " << tofind << DEF << std::endl;
+	else
+		std::cout << CYAN << "Success!" << std::endl;
 
 	return ;
 }
@@ -27,6 +32,19 @@ int main(void)
 	for (i = ints.begin(); i != ints.end(); ++i)
 		std::cout << *i << " ";
 	std::cout << std::endl;
+
+	std::cout << YELLOW << "Calling easyfind..." << DEF << std::endl;
+	easyfind(ints, 52);
+
+	std::cout << YELLOW << "Calling easyfind..." << DEF << std::endl;
+	easyfind(ints, 2);
+
+	std::cout << YELLOW << "Calling easyfind..." << DEF << std::endl;
+	easyfind(ints, -9);
+
+	std::cout << YELLOW << "Calling easyfind..." << DEF << std::endl;
+	easyfind(ints, 6);
+
 	return (0);
 }
 
