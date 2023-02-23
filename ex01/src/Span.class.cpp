@@ -19,14 +19,17 @@ int* Span::shortestSpan() const
 		throw Span::NoSpanFoundException();
 
 	int result[ints.size()];
-//	int abs_result[ints.size()];
 	int *shortest;
 
 	std::adjacent_difference(ints.begin(), ints.end(), result);
 	std::cout << "Adjacent difference:" << std::endl;
 	print(result);
 
-	shortest = std::min_element(result, result + ints.size());
+	std::valarray<int> res(result, 5);
+	std::valarray<int> abs_result = abs(res);
+	print(abs_result);
+
+	shortest = std::min_element(static_cast<int*>(abs_result + 1), static_cast<int*>(abs_result + ints.size()));
 	std::cout << *shortest << std::endl;
 	
 	return (shortest);
