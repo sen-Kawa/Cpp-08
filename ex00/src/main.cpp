@@ -1,4 +1,3 @@
-#include "../header/.class.hpp"
 #include <array>
 #include <algorithm>
 #include "../header/colours.hpp"
@@ -7,6 +6,7 @@ template<typename T>
 void easyfind(T ints, int tofind)
 {
 	auto found {std::find(ints.begin(), ints.end(), tofind)};	
+
 	return ;
 }
 
