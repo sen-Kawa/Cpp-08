@@ -25,7 +25,7 @@ int main(void)
 	std::vector<int> ints;
 	std::vector<int>::iterator i;
 
-	std::cout << YELLOW << "Declaring vector..." << DEF << std::endl;
+	std::cout << YELLOW << "Declaring vector container..." << DEF << std::endl;
 	for (int j = 0; j < 7; j++)
 		ints.push_back(j);
 
