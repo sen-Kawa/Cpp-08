@@ -14,7 +14,8 @@ void easyfind(T &ints, const int tofind)
 	if (found == ints.end())
 		std::cout << RED << "Couldn't find " << tofind << DEF << std::endl;
 	else
-		std::cout << CYAN << "Success!" << std::endl;
+		std::cout << CYAN << "Success!" << DEF << std::endl;
+	std::cout << std::endl;
 
 	return ;
 }
