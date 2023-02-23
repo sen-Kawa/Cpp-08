@@ -7,6 +7,10 @@ void Span::addNumber(const int n)
 	if (ints.size() >= maxInts)
 		throw Span::VectorFullException();
 	ints.push_back(n);
+	std::cout << "All vector elements:" << std::endl;
+	for (long unsigned int i = 0; i < ints.size(); i++)
+		std::cout << ints[i] << " ";
+	std::cout << std::endl;
 	return ;
 }
 
