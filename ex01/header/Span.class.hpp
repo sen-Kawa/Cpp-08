@@ -17,7 +17,7 @@ class Span
 	public:
 
 		void	addNumber(const int n);
-		void	shortestSpan(void) const;
+		int	*	shortestSpan(void) const;
 		void	longestSpan(void) const;
 
 		Span(void);

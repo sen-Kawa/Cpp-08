@@ -10,19 +10,19 @@ void Span::addNumber(const int n)
 	return ;
 }
 
-void Span::shortestSpan() const
+int* Span::shortestSpan() const
 {
 	if (ints.size() < 2)
 		throw Span::NoSpanFoundException();
 
-	int result[maxInts];
+	int result[ints.size()];
 	int *shortest;
 
 	std::adjacent_difference(ints.begin(), ints.end(), result);
 	shortest = std::min_element(result, result + ints.size());
-	std::cout << shortest << std::endl;
+	std::cout << *shortest << std::endl;
 	
-	return ;
+	return (shortest);
 }
 
 
@@ -44,6 +44,7 @@ Span::Span(Span const &src) : maxInts(src.maxInts)
 
 Span &	Span::operator=(const Span &assign)
 {
+	(void) assign;
 	return (*this);
 }
 
