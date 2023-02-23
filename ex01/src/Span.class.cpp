@@ -1,7 +1,10 @@
 #include "../header/Span.class.hpp"
+#include <algorithm>
 
 void Span::addNumber(const int n)
 {
+	if (ints.size() >= maxInts)
+		throw Span::VectorFullException();
 	ints.push_back(n);
 	return ;
 }
@@ -11,7 +14,12 @@ Span::Span(void) : maxInts(0)
 	return ;
 }
 
-Span::Span(Span const &src)
+Span::Span(const unsigned int n) : maxInts(n)
+{
+	return ;
+}
+
+Span::Span(Span const &src) : maxInts(src.maxInts)
 {
 	*this = src;
 	return ;
@@ -19,7 +27,6 @@ Span::Span(Span const &src)
 
 Span &	Span::operator=(const Span &assign)
 {
-	this->number = assign.getSpan();
 	return (*this);
 }
 
@@ -27,4 +34,3 @@ Span::~Span(void)
 {
 	return ;
 }
-
