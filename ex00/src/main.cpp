@@ -8,7 +8,7 @@ void easyfind(T &ints, const int tofind)
 {
 	std::cout << YELLOW << "easyfind called with value to find of " << tofind << DEF << std::endl;
 
-	std::cout << YELLOW << "Searching..." << DEF << std::endl;
+	std::cout << YELLOW << "Searching with find algorithm..." << DEF << std::endl;
 	typename T::iterator	found = std::find(ints.begin(), ints.end(), tofind);	
 
 	if (found == ints.end())
@@ -32,7 +32,7 @@ int main(void)
 	std::cout << YELLOW << "Printing elements using iterators..." << DEF << std::endl;
 	for (i = ints.begin(); i != ints.end(); ++i)
 		std::cout << *i << " ";
-	std::cout << std::endl;
+	std::cout << std::endl << std::endl;
 
 	std::cout << YELLOW << "Calling easyfind..." << DEF << std::endl;
 	easyfind(ints, 52);
@@ -48,4 +48,3 @@ int main(void)
 
 	return (0);
 }
-
