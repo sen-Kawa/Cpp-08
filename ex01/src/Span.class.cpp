@@ -15,6 +15,7 @@ void Span::addNumber(const int n)
 	if (ints.size() >= maxInts)
 		throw Span::VectorFullException();
 	ints.push_back(n);
+	std::cout << CYAN << "Added!" << DEF << std::endl;
 	return ;
 }
 
@@ -30,6 +31,20 @@ int Span::shortestSpan() const
 	std::valarray<int> abs_result = abs(res);
 
 	return (abs_result.min());
+}
+
+int Span::longestSpan() const
+{
+	if (ints.size() < 2)
+		throw Span::NoSpanFoundException();
+
+	int result[ints.size()];
+
+	std::adjacent_difference(ints.begin(), ints.end(), result);
+	std::valarray<int> res(result + 1, ints.size() - 1);
+	std::valarray<int> abs_result = abs(res);
+
+	return (abs_result.max());
 }
 
 

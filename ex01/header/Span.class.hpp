@@ -18,7 +18,7 @@ class Span
 
 		void	addNumber(const int n);
 		int		shortestSpan(void) const;
-		void	longestSpan(void) const;
+		int		longestSpan(void) const;
 		std::vector<int>	getVector(void) const;
 
 		template<typename T>
@@ -52,6 +52,7 @@ class Span
 template<typename T>
 void	Span::print(T toPrint) const
 {
+	std::cout << CYAN << "Contents are:" << DEF << std::endl;
 	for (long unsigned int i = 0; i < ints.size(); i++)
 		std::cout << toPrint[i] << " ";
 	std::cout << std::endl;
