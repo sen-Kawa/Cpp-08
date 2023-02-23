@@ -1,6 +1,7 @@
 #include "../header/Span.class.hpp"
 #include <algorithm>
 #include <numeric>
+#include <valarray>
 
 void Span::addNumber(const int n)
 {
@@ -8,9 +9,7 @@ void Span::addNumber(const int n)
 		throw Span::VectorFullException();
 	ints.push_back(n);
 	std::cout << "All vector elements:" << std::endl;
-	for (long unsigned int i = 0; i < ints.size(); i++)
-		std::cout << ints[i] << " ";
-	std::cout << std::endl;
+	print(ints);
 	return ;
 }
 
@@ -20,9 +19,13 @@ int* Span::shortestSpan() const
 		throw Span::NoSpanFoundException();
 
 	int result[ints.size()];
+//	int abs_result[ints.size()];
 	int *shortest;
 
 	std::adjacent_difference(ints.begin(), ints.end(), result);
+	std::cout << "Adjacent difference:" << std::endl;
+	print(result);
+
 	shortest = std::min_element(result, result + ints.size());
 	std::cout << *shortest << std::endl;
 	

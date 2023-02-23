@@ -20,6 +20,9 @@ class Span
 		int	*	shortestSpan(void) const;
 		void	longestSpan(void) const;
 
+		template<typename T>
+		void	print(T toPrint) const;
+
 		Span(void);
 		Span(const unsigned int);
 		Span(Span const &src);
@@ -44,5 +47,14 @@ class Span
 				}	
 		};
 };
+
+template<typename T>
+void	Span::print(T toPrint) const
+{
+	for (long unsigned int i = 0; i < ints.size(); i++)
+		std::cout << toPrint[i] << " ";
+	std::cout << std::endl;
+	return ;	
+}
 
 #endif
