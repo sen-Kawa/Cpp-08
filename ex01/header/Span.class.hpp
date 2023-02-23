@@ -16,7 +16,7 @@ class Span
 
 	public:
 
-		void	addNumber(int n);
+		void	addNumber(const int n);
 		void	shortestSpan(void) const;
 		void	longestSpan(void) const;
 
@@ -46,4 +46,3 @@ class Span
 };
 
 #endif
-
