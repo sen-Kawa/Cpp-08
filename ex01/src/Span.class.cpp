@@ -1,8 +1,10 @@
 #include "../header/Span.class.hpp"
 #include <algorithm>
+#include <cstdlib>
 #include <numeric>
 #include <valarray>
 #include <vector>
+#include <time.h>
 
 std::vector<int> Span::getVector() const
 {
@@ -16,6 +18,17 @@ void Span::addNumber(const int n)
 		throw Span::VectorFullException();
 	ints.push_back(n);
 	std::cout << CYAN << "Added!" << DEF << std::endl;
+	return ;
+}
+
+void Span::autoFill()
+{
+	std::cout << YELLOW << "Filling... " << DEF << std::endl;
+	std::srand(time(NULL));
+	for (unsigned int i = 0; i < maxInts; i++)
+		ints.push_back(rand() % 100);
+	std::cout << CYAN << "Filled!" << DEF << std::endl;
+	std::cout << "Size of vector is: " << ints.size() << std::endl;
 	return ;
 }
 

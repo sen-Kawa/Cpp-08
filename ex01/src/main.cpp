@@ -1,6 +1,7 @@
 #include "../header/Span.class.hpp"
 #include "../header/colours.hpp"
 #include <exception>
+#include <string>
 
 int main(void)
 {
@@ -50,6 +51,15 @@ int main(void)
 		std::cout << RED << "Exception arose: " << e.what() << DEF << std::endl;
 	}
 	std::cout << std::endl;
+
+	std::cout << CYAN << ">> TEST 4\n" << DEF << std::endl;
+	Span spp = Span(12000);
+	spp.autoFill();
+	std::cout << YELLOW << "To print contents enter print" << DEF << std::endl;
+	std::string input;
+	std::getline(std::cin, input);
+	if (input == "print")
+		spp.print(sp.getVector());
 
 	return (0);
 }

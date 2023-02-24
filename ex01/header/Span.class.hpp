@@ -17,6 +17,7 @@ class Span
 	public:
 
 		void	addNumber(const int n);
+		void	autoFill(void);
 		int		shortestSpan(void) const;
 		int		longestSpan(void) const;
 		std::vector<int>	getVector(void) const;
