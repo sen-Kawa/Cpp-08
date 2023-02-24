@@ -11,7 +11,6 @@ void test1(void)
 	try
 	{
 		sp.addNumber(680);
-		std::cout << YELLOW << "Calculating shortest span..." << DEF << std::endl;
 		std::cout << sp.shortestSpan() << std::endl;
 	}
 	catch (const std::exception &e)
@@ -28,6 +27,7 @@ void test2(void)
 {
 	std::cout << CYAN << ">> TEST 2\n" << DEF << std::endl;
 	Span sp = Span(7);
+	std::cout << "Max elements: 7\n" << std::endl;
 
 	try
 	{
@@ -54,6 +54,7 @@ void test3(void)
 {
 	std::cout << CYAN << ">> TEST 3\n" << DEF << std::endl;
 	Span sp = Span(5);
+	std::cout << "Max elements: 5\n" << std::endl;
 
 	try
 	{
@@ -69,6 +70,7 @@ void test3(void)
 	{
 		std::cout << RED << "Exception arose: " << e.what() << DEF << std::endl;
 	}
+	sp.print(sp.getVector());
 	std::cout << std::endl;
 
 	return ;

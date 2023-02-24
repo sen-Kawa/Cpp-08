@@ -10,9 +10,22 @@ void test4(void);
 
 int main(void)
 {
-	test1();
-	test2();
-	test3();
-	test4();
+	std::string	input;
+
+	std::cout << CYAN << "SPAN TESTER\n" << DEF << std::endl;
+	std::cout << "Enter 'run' to start running" << std::endl;
+	std::getline(std::cin, input);
+	if (input == "run")
+		test1();
+	std::cout << "Enter 'c' to continue running" << std::endl;
+	std::getline(std::cin, input);
+	if (input == "c")
+		test2();
+	std::getline(std::cin, input);
+	if (input == "c")
+		test3();
+	std::getline(std::cin, input);
+	if (input == "c")
+		test4();
 	return (0);
 }
