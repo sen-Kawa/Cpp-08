@@ -54,4 +54,6 @@ class MutantStack : public std::stack<T>
 		}
 };
 
+#include "MutantStack.class.tpp"
+
 #endif
