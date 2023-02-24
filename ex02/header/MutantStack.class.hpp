@@ -2,10 +2,11 @@
 # define MUTANTSTACK_CLASS_HPP
 
 #include <iostream>
+#include <stack>
 #include "colours.hpp"
 
 template<typename T>
-class MutantStack
+class MutantStack : public std::stack<T>
 {
 	private:
 
