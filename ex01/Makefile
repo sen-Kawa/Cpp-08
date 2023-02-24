@@ -12,7 +12,7 @@ OBJ_DIR = ./.build/
 
 LIBS = -lm
 
-SRCS = main.cpp Span.class.cpp
+SRCS = main.cpp tests.cpp Span.class.cpp
 
 RM = rm -rf
 

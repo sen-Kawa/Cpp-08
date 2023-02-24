@@ -34,6 +34,8 @@ void Span::autoFill()
 
 int Span::shortestSpan() const
 {
+	std::cout << YELLOW << "Calculating shortest span..." << DEF << std::endl;
+
 	if (ints.size() < 2)
 		throw Span::NoSpanFoundException();
 
@@ -48,6 +50,8 @@ int Span::shortestSpan() const
 
 int Span::longestSpan() const
 {
+	std::cout << YELLOW << "Calculating longest span..." << DEF << std::endl;
+
 	if (ints.size() < 2)
 		throw Span::NoSpanFoundException();
 
